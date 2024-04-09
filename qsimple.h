@@ -3,6 +3,8 @@
 #include <QFile>
 #include <QTextStream>
 #include <QVariantMap>
+
+#include "qdebug.h"
 namespace cs {
 class QSimpleIni : public QVariantMap {
   QString MULTILINE_END = QStringLiteral("%T");
@@ -59,7 +61,7 @@ private:
           if (line == MULTILINE_END) {
             break;
           }
-          variable.second += line + QStringLiteral("\n");
+          variable.second += QStringLiteral("\n") + line;
         }
       }
       section.insert(variable.first, variable.second);
@@ -100,5 +102,6 @@ public:
   }
   ~QSimpleIni() {}
 };
+
 #endif
 }
