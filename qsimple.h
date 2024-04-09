@@ -3,8 +3,6 @@
 #include <QFile>
 #include <QTextStream>
 #include <QVariantMap>
-
-#include "qdebug.h"
 namespace cs {
 class QSimpleIni : public QVariantMap {
   QString MULTILINE_END = QStringLiteral("%T");
